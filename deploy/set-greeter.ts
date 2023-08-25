@@ -16,12 +16,13 @@ if (!PRIVATE_KEY)
 
 // Address of the contract on zksync testnet
 const CONTRACT_ADDRESS = "0x111C3E89Ce80e62EE88318C2804920D4c96f92bb";
+const GREETER_ADDRESS = process.env.GREETER_ADDRESS || "";
 
-if (!CONTRACT_ADDRESS) throw "⛔️ Contract address not provided";
+if (!GREETER_ADDRESS) throw "⛔️ Contract address not provided";
 
 // An example of a deploy script that will deploy and call a simple contract.
 export default async function (hre: HardhatRuntimeEnvironment) {
-  console.log(`Running script to interact with contract ${CONTRACT_ADDRESS}`);
+  console.log(`Running script to interact with contract ${GREETER_ADDRESS}`);
 
   // Initialize the provider.
   // @ts-ignore
@@ -30,7 +31,7 @@ export default async function (hre: HardhatRuntimeEnvironment) {
 
   // Initialize contract instance
   const contract = new ethers.Contract(
-    CONTRACT_ADDRESS,
+      GREETER_ADDRESS,
     ContractArtifact.abi,
     signer
   );
