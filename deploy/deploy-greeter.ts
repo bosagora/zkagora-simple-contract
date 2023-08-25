@@ -25,6 +25,7 @@ export default async function (hre: HardhatRuntimeEnvironment) {
   const l2provider = new Provider(L2_RPC_ENDPOINT);
   const wallet = new Wallet(PRIVATE_KEY, l2provider, l1provider);
 
+  console.log(`Address is ${await wallet.getAddress()}`);
   console.log(`L1 Balance is ${await wallet.getBalanceL1()}`);
   console.log(`L2 Balance is ${await wallet.getBalance()}`);
 

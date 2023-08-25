@@ -47,7 +47,7 @@ npm manifest:
     "scripts": {
       "test": "NODE_ENV=test hardhat test --network zkSyncTestnet",
       "deploy": "NODE_ENV=test yarn hardhat deploy-zksync --script deploy-greeter.ts",
-      "greet": "NODE_ENV=test yarn hardhat deploy-zksync --script use-greeter.ts"
+      "greet": "NODE_ENV=test yarn hardhat deploy-zksync --script set-greeter.ts"
     }
   }
   1000000000000004043693500000000
